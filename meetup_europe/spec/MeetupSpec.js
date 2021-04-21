@@ -15,4 +15,12 @@ describe('meetup', function () {
     expect(countDevelopers(guestList)).toEqual(0)
   })
 
+  it('returns 2 for two basic objects with Europe and JS', function () {
+    let guestList = [
+      {continent: 'Europe', language: 'JavaScript' },
+      {continent: 'Europe', language: 'JavaScript' },
+    ]
+    expect(countDevelopers(guestList)).toEqual(2)
+  })
+
 })
