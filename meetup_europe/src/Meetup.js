@@ -1,11 +1,11 @@
 function countDevelopers(list) {
-  if (list.length  === 2) {
-    return 2
-  }
-  if (isEuropeanJsDev(list[0])) {
-    return 1
-  }
-  return 0
+  let result = 0
+  list.forEach(guest => {
+    if (isEuropeanJsDev(guest)) {
+      result += 1
+    }
+  });
+  return result
 }
 
 function isEuropeanJsDev(guestDetails) {
