@@ -1,8 +1,13 @@
 function countDevelopers(list) {
-  if (list[0].continent !== "Europe") {
-    return 0
-  } else if (list[0].language !== "JavaScript") {
-    return 0
+  if (isEuropeanJsDev(list[0])) {
+    return 1
   }
-  return 1
+  return 0
+}
+
+function isEuropeanJsDev(guestDetails) {
+  if (guestDetails.continent !== "Europe" || guestDetails.language !== "JavaScript") {
+    return false
+  }
+  return true
 }
