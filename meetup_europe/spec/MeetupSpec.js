@@ -10,4 +10,9 @@ describe('meetup', function () {
     expect(countDevelopers(guestList)).toEqual(0)
   })
 
+  it('returns 0 for a basic object without Europe', function () {
+    let guestList = [{continent: 'Asia', language: 'JavaScript' }]
+    expect(countDevelopers(guestList)).toEqual(0)
+  })
+
 })

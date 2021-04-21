@@ -1,5 +1,7 @@
 function countDevelopers(list) {
-  if (list[0].language !== "JavaScript") {
+  if (list[0].continent !== "Europe") {
+    return 0
+  } else if (list[0].language !== "JavaScript") {
     return 0
   }
   return 1
