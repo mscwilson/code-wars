@@ -1,9 +1,7 @@
 function countDevelopers(list) {
   let result = 0
   list.forEach(guest => {
-    if (isEuropeanJsDev(guest)) {
-      result += 1
-    }
+    if (isEuropeanJsDev(guest)) result += 1
   });
   return result
 }
