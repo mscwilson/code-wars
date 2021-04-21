@@ -16,6 +16,7 @@ X will be either a number or a string. Both are valid.
 Input | Output
 -----
 1 | 'Help yourself to a honeycomb Yorkie for the glovebox.'
-'1' | 'Help yourself to a honeycomb Yorkie for the glovebox.'
 50 | 'It's hotter than the sun!!'
+'1' | 'Help yourself to a honeycomb Yorkie for the glovebox.'
+'50' | 'It's hotter than the sun!!'
 

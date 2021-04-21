@@ -6,7 +6,15 @@ describe("apple turnover", function () {
     expect(apple(1)).toEqual(yorkie)
   })
 
-  it("returns Yorkie for 1", function () {
+  it("returns Sun for 50", function () {
     expect(apple(50)).toEqual(sun)
+  })
+
+  it("returns Yorkie for 1 string", function () {
+    expect(apple('1')).toEqual(yorkie)
+  })
+
+  it("returns Sun for 50 string", function () {
+    expect(apple('50')).toEqual(sun)
   })
 })
