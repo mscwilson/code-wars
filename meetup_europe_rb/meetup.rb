@@ -1,3 +1,5 @@
 def count_developers(list)
-  1
+  list.select { |dev| dev[:language] == "JavaScript" &&
+                      dev[:continent] == "Europe" }
+                      .length
 end
