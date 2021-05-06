@@ -1,12 +1,13 @@
 def create_array_of_tiers(num)
   digits = num.to_s.chars
-  result = []
-  digits.each do |digit|
-    if result.empty?
-      result << digit
+
+  digits.map!.with_index do |digit, i|
+    if i == 0
+      digit
     else
-      result << result.last + digit
+      digits[i - 1] + digit
     end
   end
-  result
+  p digits
+
 end
