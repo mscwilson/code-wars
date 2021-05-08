@@ -29,3 +29,26 @@ describe "encode" do
     expect(encode("AAABBBCCCA")).to eq "3A3B3C1A"
   end
 end
+
+describe "#decode" do
+
+  it "decodes a single letter/number pair" do
+    expect(decode("1A")).to eq "A"
+  end
+
+  it "decodes a single letter/number pair" do
+    expect(decode("1B")).to eq "B"
+  end
+
+  it "decodes 3C" do
+    expect(decode("3C")).to eq "CCC"
+  end
+
+  it "decodes with two letters" do
+    expect(decode("1D1E")).to eq "DE"
+  end
+
+  it "decodes complicated example" do
+    expect(decode("3A3B3C1A")).to eq "AAABBBCCCA"
+  end
+end
