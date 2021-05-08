@@ -1,6 +1,6 @@
 def encode(letters)
   letters.chars.chunk_while { |a, b| a == b }
-                .map { |letter| letter.length }
+                .map(&:length)
                 .zip(letters.squeeze.chars)
                 .join
 end
