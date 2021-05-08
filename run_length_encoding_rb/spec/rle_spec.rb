@@ -32,6 +32,10 @@ describe "encode" do
   it "copes with more than 10 letters" do
     expect(encode("AAAAAAAAAAAAB")).to eq "12A1B"
   end
+
+  it "encodes long multiletter example" do
+    expect(encode("FFFFFFFFFFFFFFFEEEEEEEEEEE")).to eq "15F11E"
+  end
 end
 
 describe "#decode" do
@@ -58,5 +62,9 @@ describe "#decode" do
 
   it "decodes something with a large number" do
     expect(decode("12A1B")).to eq "AAAAAAAAAAAAB"
+  end
+
+  it "decodes long example" do
+    expect(decode("15F11E")).to eq "FFFFFFFFFFFFFFFEEEEEEEEEEE"
   end
 end

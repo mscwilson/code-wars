@@ -1,13 +1,12 @@
 def encode(letters)
-  letters.chars.each_with_object([]) do |letter, arr|
-    arr << [0] if arr.empty? || arr.last[1] != letter
-    arr.last[0] += 1
-    arr.last << letter
-  end.flatten.join.squeeze
+  letters.chars.chunk_while { |a, b| a == b }
+                .map { |letter| letter.length }
+                .zip(letters.squeeze.chars)
+                .join
 end
 
 def decode(sequence)
-  sequence.scan(/\d+[A-Z]/).map do |pair|
-    pair[-1] * pair.scan(/\d+/)[0].to_i
-  end.join
+  sequence.scan(/\d+[A-Z]/)
+          .map { |pair| pair[-1] * pair.scan(/\d+/)[0].to_i }
+          .join
 end
