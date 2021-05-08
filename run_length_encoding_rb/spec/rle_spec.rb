@@ -28,6 +28,10 @@ describe "encode" do
   it "encodes a complicated sequence" do
     expect(encode("AAABBBCCCA")).to eq "3A3B3C1A"
   end
+
+  it "copes with more than 10 letters" do
+    expect(encode("AAAAAAAAAAAAB")).to eq "12A1B"
+  end
 end
 
 describe "#decode" do
@@ -50,5 +54,9 @@ describe "#decode" do
 
   it "decodes complicated example" do
     expect(decode("3A3B3C1A")).to eq "AAABBBCCCA"
+  end
+
+  it "decodes something with a large number" do
+    expect(decode("12A1B")).to eq "AAAAAAAAAAAAB"
   end
 end

@@ -8,6 +8,6 @@ end
 
 def decode(sequence)
   sequence.scan(/\d+[A-Z]/).map do |pair|
-    pair[1] * pair[0].to_i
+    pair[-1] * pair.scan(/\d+/)[0].to_i
   end.join
 end
